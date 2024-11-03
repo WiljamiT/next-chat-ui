@@ -11,12 +11,14 @@ import {
   MenubarSubTrigger,
   MenubarTrigger,
 } from '@/components/ui/menubar';
+import SignIn from '../sign-in';
 
-const Navbar = () => {
+const Navbar = async () => {
   return (
     <div className="flex flex-row items-center justify-between w-full px-4 py-2 shadow">
       <h1 className="text-xl font-bold">AI</h1>
       <Menubar>
+        <SignIn />
         <MenubarMenu>
           <MenubarTrigger>Lisää</MenubarTrigger>
           <MenubarContent>
