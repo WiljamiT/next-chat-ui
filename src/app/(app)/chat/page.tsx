@@ -1,11 +1,12 @@
 import ChatBot from '@/components/Chat/ChatBot';
-import Navbar from '@/components/Chat/Navbar';
+import React from 'react';
 
-export default function Home() {
+const page = () => {
   return (
     <div>
-      <Navbar />
       <ChatBot />
     </div>
   );
-}
+};
+
+export default page;
