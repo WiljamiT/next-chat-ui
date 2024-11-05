@@ -3,5 +3,5 @@ export default function LandingLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className="flex min-h-screen flex-col">{children}</div>;
+  return <div>{children}</div>;
 }

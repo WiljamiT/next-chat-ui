@@ -12,11 +12,13 @@ import {
   MenubarTrigger,
 } from '@/components/ui/menubar';
 import SignIn from '../sign-in';
+import { BrainCircuitIcon } from 'lucide-react';
+import Link from 'next/link';
 
 const Navbar = async () => {
   return (
-    <div className="flex flex-row items-center justify-between w-full px-4 py-2 shadow">
-      <h1 className="text-xl font-bold">AI</h1>
+    <div className="bg-[#EEE5D9] flex flex-row items-center justify-between w-full px-5 py-2 shadow">
+      <BrainCircuitIcon className="w-12 h-12 text-[#222D52] bg-white rounded-full p-2 ring-2 ring-[#222D52]/10" />
       <Menubar>
         <SignIn />
         <MenubarMenu>
@@ -47,7 +49,7 @@ const Navbar = async () => {
         <MenubarMenu>
           <MenubarTrigger>Tekoälyt</MenubarTrigger>
           <MenubarContent>
-            <MenubarSub>
+            {/* <MenubarSub>
               <MenubarSubTrigger>Find</MenubarSubTrigger>
               <MenubarSubContent>
                 <MenubarItem>Search the web</MenubarItem>
@@ -56,9 +58,13 @@ const Navbar = async () => {
                 <MenubarItem>Find Next</MenubarItem>
                 <MenubarItem>Find Previous</MenubarItem>
               </MenubarSubContent>
-            </MenubarSub>
+            </MenubarSub> */}
             <MenubarSeparator />
-            <MenubarItem>Teksti</MenubarItem>
+            <MenubarItem>
+              <Link href="/chat" className="w-full">
+                Chat
+              </Link>
+            </MenubarItem>
             <MenubarItem>Kuva</MenubarItem>
           </MenubarContent>
         </MenubarMenu>
