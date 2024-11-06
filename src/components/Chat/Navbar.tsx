@@ -64,6 +64,9 @@ const Navbar = async () => {
               <Link href="/chat" className="w-full">
                 Chat
               </Link>
+              <Link href="/signIn" className="w-full">
+                Chat
+              </Link>
             </MenubarItem>
             <MenubarItem>Kuva</MenubarItem>
           </MenubarContent>

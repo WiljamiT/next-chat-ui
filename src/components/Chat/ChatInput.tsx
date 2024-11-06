@@ -6,6 +6,7 @@ import { Loader2 } from 'lucide-react';
 interface ChatInputProps {
   loading: boolean;
   onSubmit: (message: string) => void;
+  disabled?: boolean;
 }
 
 export const ChatInput = ({ loading, onSubmit }: ChatInputProps) => {

@@ -36,6 +36,7 @@ export default function RootLayout({
             <Navbar />
           </nav>
           <main className="px-10">{children}</main>
+          {/* <AuthTest /> */}
         </Providers>
         <Footer />
       </body>

@@ -1,5 +1,30 @@
 ## NEXT CHAT AI
 
+Nextjs
+TS
+.NET backend
+EF core
+Postgresql
+
 ### Auth
 
-Auth.js by default saves the session in a cookie using encrypted JSON Web Tokens so that you don’t need to setup a database. However, if you want to persist user data you can set up a database by using one of our official database adapters or create your own.
+Auth.js
+
+### Run
+
+Create fullstack-network with docker
+docker-compose up --build
+docker-compose up
+
+### envs
+
+GITHUB_ID=
+GITHUB_SECRET=
+
+NEXT_PUBLIC_API_URL=
+AUTH_SECRET=
+NEXTAUTH_SECRET=
+NEXTAUTH_URL=http://localhost:3000
+AUTH_GITHUB_ID=
+AUTH_GITHUB_SECRET=
+NEXT_PUBLIC_API_URL=http://localhost:5000

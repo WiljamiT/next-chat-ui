@@ -7,10 +7,45 @@ type ApiError = {
   stack?: string;
 };
 
+declare module 'next-auth' {
+  interface Session {
+    user: {
+      id?: string;
+      name?: string | null;
+      email?: string | null;
+      image?: string | null;
+      accessToken?: string;
+    };
+  }
+
+  interface JWT {
+    accessToken?: string;
+  }
+}
+
+// declare module 'next-auth/jwt' {
+//   interface JWT {
+//     accessToken?: string;
+//   }
+// }
+
 export const { handlers, auth } = NextAuth({
   providers: [GitHub],
   debug: true,
   callbacks: {
+    async jwt({ token, account }) {
+      if (account) {
+        token.accessToken = account.access_token;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      // Send properties to the client
+      if (session.user) {
+        session.user.accessToken = token.accessToken as string;
+      }
+      return session;
+    },
     async signIn({ user, account }) {
       console.log('SignIn callback - user:', user);
       console.log('SignIn callback - account:', account);
@@ -34,6 +69,9 @@ export const { handlers, auth } = NextAuth({
               'Content-Type': 'application/json',
             },
             body: JSON.stringify(payload),
+            ...(account.access_token && {
+              Authorization: `Bearer ${account.access_token}`,
+            }),
           });
 
           if (!response.ok) {
@@ -62,15 +100,7 @@ export const { handlers, auth } = NextAuth({
       return true;
     },
   },
+  session: {
+    strategy: 'jwt',
+  },
 });
-
-declare module 'next-auth' {
-  interface Session {
-    user: {
-      id?: string;
-      name?: string | null;
-      email?: string | null;
-      image?: string | null;
-    };
-  }
-}

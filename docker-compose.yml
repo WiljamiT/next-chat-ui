@@ -11,6 +11,7 @@ services:
       - /app/node_modules
       - /app/.next
     environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:5000
       - NODE_ENV=development
       - WATCHPACK_POLLING=true # Enable polling for file changes
       - CHOKIDAR_USEPOLLING=true # Enable polling for chokidar
