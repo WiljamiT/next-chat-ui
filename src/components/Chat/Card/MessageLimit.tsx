@@ -1,10 +1,6 @@
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
-
-interface MessageLimitProps {
-  remainingMessages: number | null;
-  onSignIn: () => void;
-}
+import { MessageLimitProps } from '@/types';
 
 export const MessageLimit: React.FC<MessageLimitProps> = ({
   remainingMessages,

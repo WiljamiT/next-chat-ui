@@ -1,17 +1,9 @@
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Message } from '@/hooks/useMessage';
 import { LoadingIndicator } from './LoadingIndicator';
 import { ErrorMessage } from './ErrorMessage';
 import { forwardRef } from 'react';
 import { ChatMessage } from '../ChatMessage';
-
-interface MessageListProps {
-  messages: Message[];
-  loading: boolean;
-  error?: string;
-  isAuthenticated: boolean;
-  onSignIn: () => void;
-}
+import { MessageListProps } from '@/types';
 
 export const MessageList = forwardRef<HTMLDivElement, MessageListProps>(
   ({ messages, loading, error, isAuthenticated, onSignIn }, ref) => (

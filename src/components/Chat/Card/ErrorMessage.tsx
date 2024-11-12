@@ -1,12 +1,7 @@
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-interface ErrorMessageProps {
-  error: string;
-  isAuthenticated: boolean;
-  onSignIn: () => void;
-}
+import { ErrorMessageProps } from '@/types';
 
 export const ErrorMessage: React.FC<ErrorMessageProps> = ({
   error,
