@@ -3,7 +3,7 @@ import React from 'react';
 
 const page = () => {
   return (
-    <div>
+    <div className="pb-8">
       <ChatBot />
     </div>
   );

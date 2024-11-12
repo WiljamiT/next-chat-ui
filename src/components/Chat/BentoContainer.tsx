@@ -72,7 +72,7 @@ const features = [
 
 export async function BentoDemo() {
   return (
-    <BentoGrid className="lg:grid-rows-3">
+    <BentoGrid className="lg:grid-rows-3 h-">
       {features.map(feature => (
         <BentoCard key={feature.name} {...feature} />
       ))}

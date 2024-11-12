@@ -5,7 +5,7 @@ import React from 'react';
 const page = () => {
   return (
     <div className="px-2 pb-10 flex flex-col max-w-[1400px] m-auto">
-      <main className="h-[30vh] text-center flex flex-col align-center">
+      <main className="h-auto min-h-[30vh] text-center flex flex-col align-center pb-8">
         <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-400 pt-16 pb-2">
           AI avustaja
         </h1>

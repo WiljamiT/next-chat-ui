@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 body {
-  font-family: ui-serif,Georgia,Cambria,"Times New Roman",Times,serif;
-  background: #E8E4E0;
+  font-family: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  background: #e8e4e0;
 }
 
 @layer base {

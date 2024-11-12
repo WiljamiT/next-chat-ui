@@ -1,5 +1,3 @@
-// utils/dateFormatters.ts
-
 /**
  * Formats a number to ensure it has at least two digits
  * @param n Number to format
