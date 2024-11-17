@@ -9,6 +9,7 @@ export interface Message {
 
 export const useMessages = () => {
   const [messages, setMessages] = useState<Message[]>([]);
+  const [isAlertOpen, setIsAlertOpen] = useState(false);
   const initialized = useRef(false);
 
   useEffect(() => {
@@ -53,15 +54,16 @@ export const useMessages = () => {
   };
 
   const clearMessages = () => {
-    if (window.confirm('Are you sure you want to clear the chat history?')) {
-      setMessages([]);
-      localStorage.removeItem('chatMessages');
-    }
+    setMessages([]);
+    localStorage.removeItem('chatMessages');
+    setIsAlertOpen(false);
   };
 
   return {
     messages,
     addMessage,
     clearMessages,
+    isAlertOpen,
+    setIsAlertOpen,
   };
 };

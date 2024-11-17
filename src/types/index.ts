@@ -38,3 +38,10 @@ export interface MessageListProps {
   isAuthenticated: boolean;
   onSignIn: () => void;
 }
+
+export interface ChatHeaderProps {
+  title: string;
+  isAuthenticated: boolean;
+  onSignIn: () => void;
+  onClear: () => void;
+}

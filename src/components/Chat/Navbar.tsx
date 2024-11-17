@@ -6,13 +6,10 @@ import {
   MenubarMenu,
   MenubarSeparator,
   MenubarShortcut,
-  MenubarSub,
-  MenubarSubContent,
-  MenubarSubTrigger,
   MenubarTrigger,
 } from '@/components/ui/menubar';
 import SignIn from '../sign-in';
-import { BrainCircuitIcon } from 'lucide-react';
+import { BrainCircuitIcon, Image, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 
 const Navbar = async () => {
@@ -24,51 +21,29 @@ const Navbar = async () => {
         <MenubarMenu>
           <MenubarTrigger>Lisää</MenubarTrigger>
           <MenubarContent>
-            <MenubarItem>
-              New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-            </MenubarItem>
-            <MenubarItem>
-              New Window <MenubarShortcut>⌘N</MenubarShortcut>
-            </MenubarItem>
-            <MenubarItem disabled>New Incognito Window</MenubarItem>
-            <MenubarSeparator />
-            <MenubarSub>
-              <MenubarSubTrigger>Share</MenubarSubTrigger>
-              <MenubarSubContent>
-                <MenubarItem>Email link</MenubarItem>
-                <MenubarItem>Messages</MenubarItem>
-                <MenubarItem>Notes</MenubarItem>
-              </MenubarSubContent>
-            </MenubarSub>
-            <MenubarSeparator />
-            <MenubarItem>
-              Print... <MenubarShortcut>⌘P</MenubarShortcut>
-            </MenubarItem>
+            <MenubarItem>New Tab</MenubarItem>
           </MenubarContent>
         </MenubarMenu>
         <MenubarMenu>
           <MenubarTrigger>Tekoälyt</MenubarTrigger>
           <MenubarContent>
-            {/* <MenubarSub>
-              <MenubarSubTrigger>Find</MenubarSubTrigger>
-              <MenubarSubContent>
-                <MenubarItem>Search the web</MenubarItem>
-                <MenubarSeparator />
-                <MenubarItem>Find...</MenubarItem>
-                <MenubarItem>Find Next</MenubarItem>
-                <MenubarItem>Find Previous</MenubarItem>
-              </MenubarSubContent>
-            </MenubarSub> */}
             <MenubarSeparator />
             <MenubarItem>
+              <MenubarShortcut>
+                <MessageCircle />
+              </MenubarShortcut>
               <Link href="/chat" className="w-full">
-                Chat
-              </Link>
-              <Link href="/signIn" className="w-full">
-                Chat
+                Chat{' '}
               </Link>
             </MenubarItem>
-            <MenubarItem>Kuva</MenubarItem>
+            <MenubarItem>
+              <MenubarShortcut>
+                <Image />
+              </MenubarShortcut>
+              <Link href="/imageGenerator" className="w-full">
+                Kuva
+              </Link>
+            </MenubarItem>
           </MenubarContent>
         </MenubarMenu>
       </Menubar>

@@ -38,7 +38,7 @@ export const ChatInput = ({ loading, onSubmit }: ChatInputProps) => {
         value={input}
         onChange={e => setInput(e.target.value)}
         onKeyDown={handleKeyDown}
-        placeholder="Type your message... (Ctrl + Enter to send)"
+        placeholder="Kirjoita tähän... (Lähetä (Ctrl + Enter))"
         disabled={loading}
         className="flex-1"
       />

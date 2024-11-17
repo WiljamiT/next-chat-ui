@@ -13,6 +13,6 @@ export const SignInButton: React.FC<SignInButtonProps> = ({ onSignIn }) => (
     className="flex items-center gap-2"
   >
     <LogIn className="h-4 w-4" />
-    Sign In
+    Kirjaudu sisään
   </Button>
 );

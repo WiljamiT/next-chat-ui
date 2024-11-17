@@ -10,11 +10,11 @@ export const MessageLimit: React.FC<MessageLimitProps> = ({
     <div className="flex items-center justify-between">
       <AlertDescription>
         {remainingMessages && remainingMessages > 0
-          ? `You have ${remainingMessages} messages remaining. Sign in for unlimited messages.`
-          : 'Message limit reached.'}
+          ? `Rajoitettu: ${remainingMessages} viestiä jäljellä. Kirjautumalla voit lähettää enemmän viestejä.`
+          : 'Viestien maksimi määrä saavutettu.'}
       </AlertDescription>
       <Button variant="outline" size="sm" onClick={onSignIn} className="ml-4">
-        Sign In
+        Kirjaudu sisään
       </Button>
     </div>
   </Alert>
